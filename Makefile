@@ -9,7 +9,7 @@ SOURCE = $(wildcard $(SRC)/*.c)
 OBJECT = $(patsubst %,$(BIN)/%,$(notdir $(SOURCE:.c=.o)))
 CC = gcc
 
-CFLAGS = -Wall -I$(INC) -I$(SYSINC) -w $(shell sdl-config --cflags) -lSDL2 -lSDL2main -I/usr/include/SDL2 -D_REENTRANT
+CFLAGS = -Wall -I$(INC) -I$(SYSINC) -w $(shell sdl-config --cflags) -lSDL2 -lSDL2main
 
 $(BIN)/$(TARGET): $(OBJECT)
 	@echo "COMPILING"
@@ -25,4 +25,5 @@ help :
 .PHONY : help
 
 
-
+clean :
+	@RED='\033[0;31m' ;NC='\033[0m'; echo -e "`tput setaf 1`REMOVING`tput sgr0` BIN(binary) FILES"
