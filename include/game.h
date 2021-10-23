@@ -1,5 +1,5 @@
-#ifndef __main.h__
-#define __main.h__
+#ifndef __main_h__
+#define __main_h__
 
 #include <SDL2/SDL.h>
 #include <stdbool.h>
