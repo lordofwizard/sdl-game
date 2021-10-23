@@ -3,7 +3,6 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
-bool isRunning = false;
 SDL_Window * window;
 SDL_Renderer * renderer;
 void init(const char * game_name , int xpos , int ypos , int width, int height, bool fullscreen){
