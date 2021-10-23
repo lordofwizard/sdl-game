@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
-#include <game.h>
 int main(){
       const unsigned short int fps = 60;
       const unsigned short int frameDelay = 1000/fps;
