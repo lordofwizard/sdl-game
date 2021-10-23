@@ -1,26 +1,28 @@
-SRC=src
-SRCS := $(wildcard $(SRC)/*.c)
-BINS := $(SRCS:%.c=%)
+TARGET = game
 
 
+SRC = src
+INC = include 
+BIN = bin
+SYSINC = /usr/share/include/
+SOURCE = $(wildcard $(SRC)/*.c)
+OBJECT = $(patsubst %,$(BIN)/%,$(notdir $(SOURCE:.c=.o)))
 CC = gcc
 
-COMPILER_FLAGS = -w $(shell sdl-config --cflags)
+CFLAGS = -Wall -I$(INC) -I$(SYSINC) -w $(shell sdl-config --cflags) -lSDL2 -lSDL2main -I/usr/include/SDL2 -D_REENTRANT
 
-LINKER_FLAGS =   $(shell sdl-config --libs) -lSDL2_image
+$(BIN)/$(TARGET): $(OBJECT)
+	@echo "COMPILING"
+	$(CC) $(CFLAGS) -o $@ $^
 
-INCLUDE_FLAGS = -I include/ -I /usr/share/include/
+$(BIN)/%.o : $(SRC)/%.c
+	@echo "LINKING"
+	$(CC) $(CFLAGS) -c $< -o $@
 
-OBJ_NAME = game
+help :
+	@echo "sources :$(SOURCE)"
+	@echo "objects :$(OBJECT)"
+.PHONY : help
 
-all: ${BINS}
 
-%: %.o
-        @echo "Checking .c files"
-        $(CC) $(INCLUDE_FLAGS) $(COMPILER_FLAGS) $(LINKER_FLAGS) $< -o $@
-%.o: %.c
-        @echo "Making .o files"
-        $(CC) $(INCLUDE_FLAGS) -c $<
 
-clean:
-	rm -rf *.o
