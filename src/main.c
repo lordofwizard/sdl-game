@@ -5,7 +5,7 @@
 int main(){
       const unsigned short int fps = 60;
       const unsigned short int frameDelay = 1000/fps;
-
+      extern bool isRunning;
       // initialization of the window
       init("game",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,1280,720,false);
       
@@ -18,7 +18,7 @@ int main(){
             frameStart = SDL_GetTicks();
             render();
             frameTime = SDL_GetTicks() - frameStart;
-            printf("Current Frame Time is %d ms", frameTime);
+            printf("Current Frame Time is %d ms\n", frameTime);
             handleEvents();
       if(frameDelay > frameTime){
             SDL_Delay(frameDelay);

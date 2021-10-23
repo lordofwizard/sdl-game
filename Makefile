@@ -16,6 +16,7 @@ $(BIN)/$(TARGET): $(OBJECT)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(BIN)/%.o : $(SRC)/%.c
+	@mkdir -p bin
 	@echo "LINKING"
 	$(CC) $(CFLAGS) -c $< -o $@
 
