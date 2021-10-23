@@ -27,3 +27,4 @@ help :
 
 clean :
 	@RED='\033[0;31m' ;NC='\033[0m'; echo -e "`tput setaf 1`REMOVING`tput sgr0` BIN(binary) FILES"
+	rm -rf bin/
