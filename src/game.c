@@ -18,7 +18,7 @@ void init(const char * game_name , int xpos , int ypos , int width, int height, 
 
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer) {
-            SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+            SDL_SetRenderDrawColor(renderer, 100, 100, 0, 255);
             printf("Renderer is initialized\n");
         }
         isRunning = true;

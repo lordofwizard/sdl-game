@@ -1,6 +1,9 @@
 #ifndef __main_h__
 #define __main_h__
 
+SDL_Window * window;
+SDL_Renderer * renderer;
+
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
