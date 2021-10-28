@@ -7,6 +7,6 @@ SDL_Texture* makeTexture(const char* file_path){
 
     if(texture == NULL) printf("Failed to load Texture : %s\n", SDL_GetError());
 
-     
+    return texture; 
 
 }

@@ -1,5 +1,5 @@
-#ifndef __main_h__
-#define __main_h__
+#ifndef main_h__
+#define main_h__
 
 
 #include <SDL2/SDL.h>

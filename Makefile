@@ -9,7 +9,7 @@ SOURCE = $(wildcard $(SRC)/*.c)
 OBJECT = $(patsubst %,$(BIN)/%,$(notdir $(SOURCE:.c=.o)))
 CC = gcc
 
-CFLAGS = -Wall -I$(INC) -I$(SYSINC) -w $(shell sdl-config --cflags) -lSDL2 -lSDL2main -lSDL2_image
+CFLAGS = -Wall -I$(INC) -I$(SYSINC)  -lSDL2  -lSDL2_image
 
 $(BIN)/$(TARGET): $(OBJECT)
 	@echo "COMPILING"

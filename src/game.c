@@ -2,9 +2,8 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include "common.h"
 
-SDL_Window * window;
-SDL_Renderer * renderer;
 void init(const char * game_name , int xpos , int ypos , int width, int height, bool fullscreen){
     int flags = 0;
     if(fullscreen){
